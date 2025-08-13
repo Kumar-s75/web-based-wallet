@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { generateMnemonic } from "bip39";
-
+import {SolanaWallet} from './components/Solanawallet'
 
 function App() {
   const [mnemonic, setMnemonic] = useState("");
@@ -21,6 +21,7 @@ value={mnemonic}
 readOnly
 // style={{width:"100%",padding:"10px"}}
 />
+{mnemonic && <SolanaWallet mnemonic={mnemonic}/>}
     </>
   )
 }
