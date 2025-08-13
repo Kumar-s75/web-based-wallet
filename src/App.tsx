@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { generateMnemonic } from "bip39";
 import {SolanaWallet} from './components/Solanawallet'
+import { EthWallet } from './components/EthWallet';
 
 function App() {
   const [mnemonic, setMnemonic] = useState("");
@@ -21,7 +22,16 @@ value={mnemonic}
 readOnly
 // style={{width:"100%",padding:"10px"}}
 />
-{mnemonic && <SolanaWallet mnemonic={mnemonic}/>}
+{mnemonic && 
+
+(
+<> 
+
+<SolanaWallet mnemonic={mnemonic}/>
+ <EthWallet mnemonic={mnemonic} />
+ 
+ </>
+ )}
     </>
   )
 }
